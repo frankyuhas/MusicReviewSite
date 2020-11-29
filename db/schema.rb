@@ -10,8 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_222449) do
+ActiveRecord::Schema.define(version: 2020_11_29_221902) do
 
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.string "songs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
 
   create_table "image_elements", force: :cascade do |t|
     t.integer "page_id", null: false
@@ -42,9 +50,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_222449) do
     t.datetime "image_updated_at"
   end
 
-
-  add_foreign_key "image_elements", "pages"
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,4 +62,5 @@ ActiveRecord::Schema.define(version: 2020_11_27_222449) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "image_elements", "pages"
 end
