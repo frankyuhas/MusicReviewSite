@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <img src="/images/rails_logo.jpeg" id="titleImg" alt="rails_logo"/>
 <br/>
 <br/>
@@ -202,7 +202,55 @@
   </div>
 </div>
 
-=======
-<h1>About Us...</h1>
-<p>Sean was here!</p>
->>>>>>> parent of a6f979f... added footer and tutorial page with content
+<br/>
+
+<h3>Now lets navigate to our newly created homepage.</h3>
+
+<br/>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/new_homepage.png" class="card-img-top" alt="new_homepage">
+  <div class="card-body">
+    <p class="card-text">We should see a page that looks like this.</p>
+  </div>
+</div>
+
+<p>Lets make this our root page. To do this we have to change the route. In Rails routes allow us to navigate to a specific page based on http requests.</p>
+<p>To do this lets go to our text editor and open config/routes.rb.</p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_homeroute.png" class="card-img-top" alt="homeroute">
+  <div class="card-body">
+    <p class="card-text">The routes file should look like this.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>To make our new page our root, we need to edit this file. First comment our the line "get 'home/index'". Then add: </p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">root 'home#index'</div>
+
+<p>When comeplete 'localhost:3000' should now bring us right to our homepage.</p>
+
+<p>Now we can edit our homepage and add whatever we like.</p>
+
+<br/>
+<br/>
+
+<h1 id='setup'>Developing our homepage and adding a nav bar</h1>
+
+<p>In order to start developing a styling our webpage we need to open the 'application.html.erb' file. This file is located inside app/views/layouts folder.
+This file is essentially our base template for all of our webpages. We can use this file to keep consistency with our site, while also making it dynamic. </p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/application.png" class="card-img-top" alt="application">
+  <div class="card-body">
+    <p class="card-text">Your application,html.erb file should look something like this.</p>
+  </div>
+</div>
+
+<br/>
+
+
+<p> In this file you'll notice a 'yield' tag, surrounded by '<%= %>'. This tag is used for embedding ruby. This tag is here for us to output the content we create for our other pages within the blueprint that Rails has created for us</p>
