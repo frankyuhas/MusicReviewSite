@@ -1,4 +1,4 @@
-<img src="/images/rails_logo.jpeg" alt="rails_logo"/>
+<img src="/images/rails_logo.jpeg" id="titleImg" alt="rails_logo"/>
 <br/>
 <br/>
 <h1>What is Ruby on Rails?</h1>
@@ -63,3 +63,141 @@
 
 
 <p>Download and install the package containing Ruby version 2.3. Following all of the default prompts.</p>
+
+<br/>
+
+<h3>Now we can update Ruby</h3>
+
+<br/>
+
+<p>Go to <a href="https://rubyinstaller.org/downloads/">rubyinstaller.org</a> to download the latest version of Ruby.</p>
+<p>The most recent, stable version is highlighted in bold. Follow all of teh default prompts, making sure everything is checked.</p>
+<p>This will update the old version of Ruby we installed with Rails installer.</p>
+
+
+<br/>
+
+<h3>No let's update Rails</h3>
+
+<br/>
+
+<p>Open the Git Bash terminal and run the "gem install rails" command.</p>
+
+<br/>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_install.png" class="card-img-top" alt="rails_install">
+  <div class="card-body">
+    <p class="card-text">When installed it will look like this.</p>
+  </div>
+</div>
+
+<br/>
+<br/>
+
+<h3>Now lets make a test project and run the server to see if our install worked</h1>
+
+<br/>
+
+<p>First we need to make a directory for our projects. We are going to place it in our C drive.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ mkdir /c/musicReviewSite</div>
+
+
+<p>Next let's navigate into our new folder.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ cd /c/musicReviewSite/</div>
+
+
+<p>Now that we are in the correct directory, lets make our project. </p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails new musicReviewSite</div>
+
+<p>This command will create the necessary skeleton of our project.</p>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/new_site.png" class="card-img-top" alt="new_site">
+  <div class="card-body">
+    <p class="card-text">You should see this message when complete.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>Now let's navigate into our new project</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ cd musicReviewSite/</div>
+
+<p>And now we can initialize the server to see if it works.</p>
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails s</div>
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/server.png" class="card-img-top" alt="server">
+  <div class="card-body">
+    <p class="card-text">This output means the server is working.</p>
+  </div>
+</div>
+
+<br/>
+
+<p>In your browser enter: </p>
+<div class="shadow-sm p-3 mb-5 bg-light rounded">localhost:3000</div>
+
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_welcome.png" class="card-img-top" alt="welcome">
+  <div class="card-body">
+    <p class="card-text">If you see this landing page, Congratulations! You made your first Rails site.</p>
+  </div>
+</div>
+
+
+<br/>
+<br/>
+
+<h1 id='setup'>Now we can start building our site</h1>
+
+<br/>
+
+<p>We need to have a few things open to work on our project</p>
+
+<ul>
+	<li>Open your new project in Sublime Text</li>
+	<li>Run the rails server for your site so you can see updates in real time</li>
+	<li>Another Git Bash terminal in our site directory, to add new components</li>
+</ul>
+
+<br/>
+
+<p>When opening your project in Sublime you'll see Rails has created a number of folders and files for us</p>
+
+<br/> 
+
+<img src="/images/sublime_folders.png">
+
+<div class="d-inline-flex p-2 bd-highlight">- We will mostly be using the App, Config, and DB folders. Along with the Gemfile</div>
+
+<br/>
+<br/>
+
+<h3>Now we need to create a Controller and a View for our homepage</h3>
+
+<p>Remember from earlier, Rails is an MVC framework. The Model being our database, Views are our actual pages we create, and Controllers execute the requests from our application. So to start we need at minimum a Controller and a view.</p>
+
+<p>So we want to create a Controller and a View for our homepage. To do this Rails has generate helper files that we can use to easily generate the things we need.</p>
+
+<p>So navigate to the Git Bash terminal for our musicReviewSite directory and execute the following command. </p>
+
+<br/> 
+
+<div class="shadow-sm p-3 mb-5 bg-light rounded">$ rails generate controller home index</div>
+
+
+<div class="card" style="width: 25rem;">
+  <img src="/images/rails_generate.png" class="card-img-top" alt="generate_home">
+  <div class="card-body">
+    <p class="card-text">Rails has now executed all of these commands, creating the necessary files we need.</p>
+  </div>
+</div>
+
