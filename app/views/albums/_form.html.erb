@@ -1,0 +1,7 @@
+<%= simple_form_for @album, :html => { :multipart => true } do |f| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %>
+	<%= f.input :title, label: "Album Title" %>
+	<%= f.input :artist %>
+	<%= f.input :songs %>
+	<%= f.button :submit %>
+<% end %>

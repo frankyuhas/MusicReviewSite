@@ -7,20 +7,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      
-      <li class="nav-item active  text-success">
-        <%= link_to "Songs", songs_path, class:"nav-link" %>
+
+      <li class="nav-item active">
+        <%= link_to "Albums", albums_path, class:"nav-link" %>
         
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Genre
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Hip-Hop</a>
-          <a class="dropdown-item" href="#">Indie</a>
-          <a class="dropdown-item" href="#">Rock</a>
-        </div>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres<span></span></a>
+        <ul class ="dropdown-menu" role="menu">
+          <% Category.all.each do |category| %>
+            <li>
+              <%= link_to category.name, albums_path(category: category.name), class: "link" %>
+            </li>
+            <% end %>
+        </ul>
 
         
       </li>
