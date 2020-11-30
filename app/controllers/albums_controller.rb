@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
 			@albums = Album.all.order("created_at DESC")
 		else
 			@category_id = Category.find_by(name: params[:category]).id
-			@albums = Album.where(:category_id => @category_id).order("create_at DESC")
+			@albums = Album.where(:category_id => @category_id).order("created_at DESC")
 		end
 	end
 
@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
 	def create
 		@album = current_user.albums.build(album_params)
 		@album.category_id = params[:category_id]
-
+		@album.album_img = params[:album_img]
 		if @album.save 
 			redirect_to root_path
 		else
@@ -34,6 +34,7 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album.category_id = params[:category_id]
+		@album.album_img = params[:album_img]
 		if @album.update(album_params)
 			redirect_to album_path(@album)
 		else
@@ -46,15 +47,15 @@ class AlbumsController < ApplicationController
 		redirect_to root_path
 	end
 
-
 	private
 
 		def album_params
-			params.require(:album).permit(:title, :artist, :songs, :category_id)
+			params.require(:album).permit(:title, :artist, :songs, :category_id, :album_img)
 		end
 
 		def find_album
 			@album = Album.find(params[:id])
 		end
+
 
 end
