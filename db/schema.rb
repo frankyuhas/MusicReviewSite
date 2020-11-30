@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_002146) do
   create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "artist"
-
     t.string "songs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,13 +32,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_002146) do
     t.integer "page_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["page_id"], name: "index_image_elements_on_page_id"
   end
 
-  create_table "image_elements", force: :cascade do |t|
-    t.integer "page_id", null: false
+  create_table "rap", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.string "genre"
+    t.date "release"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["page_id"], name: "index_image_elements_on_page_id"
   end
 
   create_table "songs", force: :cascade do |t|
